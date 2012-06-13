@@ -1,4 +1,6 @@
 GoOut::Application.routes.draw do
+  resources :reservations
+
   root to: 'home#index'
   match '/customer_signup', to: 'customers#new'
   match '/customer_signin', to: 'customer_sessions#new'
