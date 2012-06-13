@@ -11,6 +11,53 @@
     </div>
   <% end %>
 
+  <div>
+    <%= f.label :languages %>
+    <%= f.text_field :languages %>
+    </br>
+    <%= f.fields_for :employee do |g| %>
+      <%= g.label :first_name %>
+      <%= g.text_field :first_name %>
+      </br>
+      <%= g.label :last_name %>
+      <%= g.text_field :last_name %>
+      </br>
+      <%= g.label :ssn %>
+      <%= g.text_field :ssn %>
+      </br>
+      <%= g.label :phone %>
+      <%= g.text_field :phone %>
+      </br>
+      <%= g.label :email %>
+      <%= g.text_field :email %>
+      </br>
+      <%= g.label :password %>
+      <%= g.password_field :password %>
+      </br>
+      <%= g.fields_for :address do |h| %>
+        <%= h.label :street %>
+        <%= h.text_field :street %>
+        </br>
+        <%= h.label :city %>
+        <%= h.text_field :city %>
+        </br>
+        <%= h.label :state %>
+        <%= h.text_field :state %>
+        </br>
+        <%= h.label :zip %>
+        <%= h.text_field :zip %>
+      <% end %>
+      </br>
+      <%= g.fields_for :salary_rate do |h| %>
+        <%= h.label :hourly_rate %>
+        <%= h.text_field :hourly_rate %>
+        </br>
+        <%= h.label :level %>
+        <%= h.text_field :level %>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

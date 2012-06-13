@@ -19,8 +19,11 @@
 <%= @employee.address.state %>
 <%= @employee.address.zip %>
 </br>
-<%= label_tag : %>
-<%= @employee.phone %>
+<%= label_tag :hourly_rate %>
+<%= @employee.salary_rate.hourly_rate %>
+</br>
+<%= label_tag :level %>
+<%= @employee.salary_rate.level %>
 </br>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |

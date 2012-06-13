@@ -14,6 +14,7 @@ class WaitersController < ApplicationController
   # GET /waiters/1.json
   def show
     @waiter = Waiter.find(params[:id])
+    @employee = @waiter.employee
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,9 @@ class WaitersController < ApplicationController
   # GET /waiters/new.json
   def new
     @waiter = Waiter.new
+    @waiter.build_employee
+    @waiter.employee.build_address
+    @waiter.employee.build_salary_rate
 
     respond_to do |format|
       format.html # new.html.erb

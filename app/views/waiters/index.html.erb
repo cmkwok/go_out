@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +10,7 @@
 
 <% @waiters.each do |waiter| %>
   <tr>
+    <td><%= waiter.employee.first_name %> <%= waiter.employee.last_name %></td>
     <td><%= link_to 'Show', waiter %></td>
     <td><%= link_to 'Edit', edit_waiter_path(waiter) %></td>
     <td><%= link_to 'Destroy', waiter, confirm: 'Are you sure?', method: :delete %></td>
