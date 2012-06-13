@@ -1,5 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<%= label_tag :specialty %>
+<%= @chef.specialty %>
+</br>
+<%= label_tag :id %>
+<%= @employee.id %>
+</br>
+<%= label_tag :name %>
+<%= @employee.first_name %>
+<%= @employee.last_name %>
+</br>
+<%= label_tag :email %>
+<%= @employee.email %>
+</br>
+<%= label_tag :phone %>
+<%= @employee.phone %>
+</br>
+<%= label_tag :address %>
+<%= @employee.address.street %>
+<%= @employee.address.city %>
+<%= @employee.address.state %>
+<%= @employee.address.zip %>
+</br>
+<%= label_tag :hourly_rate %>
+<%= @employee.salary_rate.hourly_rate %>
+</br>
+<%= label_tag :level %>
+<%= @employee.salary_rate.level %>
+</br>
 
 <%= link_to 'Edit', edit_chef_path(@chef) %> |
 <%= link_to 'Back', chefs_path %>

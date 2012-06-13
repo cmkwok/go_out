@@ -10,9 +10,12 @@
 #
 
 class Chef < ActiveRecord::Base
+  attr_accessible :specialty, :employee_attributes
+
   has_one :employee, as: :employable
   has_many :order_items
 
+  accepts_nested_attributes_for :employee
+
   validates :employee,      presence: true
-  validates :order_item_id, presence: true
 end

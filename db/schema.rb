@@ -40,9 +40,8 @@ ActiveRecord::Schema.define(:version => 20120613204525) do
 
   create_table "chefs", :force => true do |t|
     t.string   "specialty"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "order_item_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "customers", :force => true do |t|

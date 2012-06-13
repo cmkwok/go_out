@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +10,7 @@
 
 <% @managers.each do |manager| %>
   <tr>
+    <td><%= manager.employee.first_name %> <%= manager.employee.last_name %></td>
     <td><%= link_to 'Show', manager %></td>
     <td><%= link_to 'Edit', edit_manager_path(manager) %></td>
     <td><%= link_to 'Destroy', manager, confirm: 'Are you sure?', method: :delete %></td>

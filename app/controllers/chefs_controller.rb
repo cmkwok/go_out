@@ -14,6 +14,7 @@ class ChefsController < ApplicationController
   # GET /chefs/1.json
   def show
     @chef = Chef.find(params[:id])
+    @employee = @chef.employee
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,9 @@ class ChefsController < ApplicationController
   # GET /chefs/new.json
   def new
     @chef = Chef.new
+    @chef.build_employee
+    @chef.employee.build_address
+    @chef.employee.build_salary_rate
 
     respond_to do |format|
       format.html # new.html.erb

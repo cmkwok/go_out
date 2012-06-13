@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +10,7 @@
 
 <% @chefs.each do |chef| %>
   <tr>
+    <td><%= chef.employee.first_name %> <%= chef.employee.last_name %></td>
     <td><%= link_to 'Show', chef %></td>
     <td><%= link_to 'Edit', edit_chef_path(chef) %></td>
     <td><%= link_to 'Destroy', chef, confirm: 'Are you sure?', method: :delete %></td>

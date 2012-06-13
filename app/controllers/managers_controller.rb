@@ -14,6 +14,7 @@ class ManagersController < ApplicationController
   # GET /managers/1.json
   def show
     @manager = Manager.find(params[:id])
+    @employee = @manager.employee
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,9 @@ class ManagersController < ApplicationController
   # GET /managers/new.json
   def new
     @manager = Manager.new
+    @manager.build_employee
+    @manager.employee.build_address
+    @manager.employee.build_salary_rate
 
     respond_to do |format|
       format.html # new.html.erb

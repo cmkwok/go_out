@@ -9,7 +9,10 @@
 #
 
 class Manager < ActiveRecord::Base
+  attr_accessible :comment, :employee_attributes
   has_one :employee, as: :employable
+
+  accepts_nested_attributes_for :employee
 
   validates :employee, presence: true
 end

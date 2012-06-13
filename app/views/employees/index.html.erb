@@ -1,5 +1,21 @@
 <h1>Listing employees</h1>
 
+<%= form_for :search, url: employees_path, method: :get do |f| %>
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+  </br>
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+  </br>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  </br>
+  <%= f.label :ssn %>
+  <%= f.text_field :ssn %>
+  </br>
+  <%= f.submit "Search" %>
+<% end %>
+
 <table>
   <tr>
     <th>name</th>
