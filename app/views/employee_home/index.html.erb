@@ -1,11 +1,16 @@
 <h1>Employee Home</h1>
 
+<%= link_to "Logout", employee_signout_path %>
 <% if @employee.is_manager? %>
-  <%= link_to "Home", root_path %>
   | <%= link_to "Employees", employees_path %>
   | <%= link_to "Waiters", waiters_path %>
   | <%= link_to "Chefs", chefs_path %>
   | <%= link_to "Managers", managers_path %>
   | <%= link_to "Employee Hours", employee_hours_path %>
   | <%= link_to "Waiter Orders", waiter_orders_path %>
+  | <%= link_to "Chef Dishes", chef_dishes_path %>
+<% end %>
+
+<% if @employee.is_waiter? %>
+  | <%= link_to "Orders", orders_path %>
 <% end %>

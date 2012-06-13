@@ -1,0 +1,16 @@
+<h1>Chef Dishes</h1>
+<%= link_to "Home", root_path %>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th></th>
+  </tr>
+
+<% @chefs.each do |chef| %>
+  <tr>
+    <td><%= chef.employee.first_name %> <%= chef.employee.last_name %></td>
+    <td><%= chef.order_items.count %></td>
+  </tr>
+<% end %>
+</table>
