@@ -1,5 +1,27 @@
 <p id="notice"><%= notice %></p>
 
+<%= label_tag :id %>
+<%= @employee.id %>
+</br>
+<%= label_tag :name %>
+<%= @employee.first_name %>
+<%= @employee.last_name %>
+</br>
+<%= label_tag :email %>
+<%= @employee.email %>
+</br>
+<%= label_tag :phone %>
+<%= @employee.phone %>
+</br>
+<%= label_tag :address %>
+<%= @employee.address.street %>
+<%= @employee.address.city %>
+<%= @employee.address.state %>
+<%= @employee.address.zip %>
+</br>
+<%= label_tag : %>
+<%= @employee.phone %>
+</br>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
