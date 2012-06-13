@@ -1,0 +1,30 @@
+<h1>Table Menu</h1>
+
+<%= form_for :search, url: table_menu_path do |f| %>
+  <%= f.datetime_select :time %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Min Capacity</th>
+    <th>Max Capacity</th>
+    <th></th>
+  </tr>
+
+<% @tables.each do |table| %>
+  <tr>
+    <td>Table <%= table.id %></td>
+    <td><%= table.max_capacity %></td>
+    <td><%= table.min_capacity %></td>
+    <td>
+      <%= form_for :table, url: table_menu_path do |f| %>
+        <%= f.hidden_field :time, value: @time %>
+        <%= f.hidden_field :table_id, value: table.id %>
+        <%= f.hidden_field :customer_id, value: @customer.id %>
+        <%= f.submit "Reserve" %>
+      <% end %>
+  </tr>
+<% end %>
+</table>

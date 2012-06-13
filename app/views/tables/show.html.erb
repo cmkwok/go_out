@@ -1,5 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<%= label_tag :id %>
+<%= @table.id %>
+</br>
+<%= label_tag :min_capacity %>
+<%= @table.min_capacity %>
+</br>
+<%= label_tag :max_capacity %>
+<%= @table.max_capacity %>
+</br>
+
 
 <%= link_to 'Edit', edit_table_path(@table) %> |
 <%= link_to 'Back', tables_path %>

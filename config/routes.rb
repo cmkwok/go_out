@@ -8,6 +8,7 @@ GoOut::Application.routes.draw do
   match '/customer_home', to: 'customer_home#index'
   match '/employee_signin', to: 'employee_sessions#new'
   match '/menu', to: 'menu#index'
+  match '/table_menu', to: 'table_menu#index'
 
   resources :customer_sessions
   resources :employee_sessions

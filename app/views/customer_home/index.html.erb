@@ -1,4 +1,4 @@
 <h1>Welcome <%= "#{@customer.first_name} #{@customer.last_name}" %></h1>
 <%= link_to "Logout", customer_signout_path %>
- | <%= link_to "View Menu", dishes_path %>
- | <%= link_to "View Tables", nil %>
+ | <%= link_to "View Menu", menu_path %>
+ | <%= link_to "View Tables", table_menu_path %>

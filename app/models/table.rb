@@ -11,6 +11,8 @@
 #
 
 class Table < ActiveRecord::Base
+  attr_accessible :min_capacity, :max_capacity
+
   has_many :orders
 
   validates :min_capacity, presence: true,
