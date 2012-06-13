@@ -1,0 +1,2 @@
+class ChefDishesController < ApplicationController
+end

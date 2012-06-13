@@ -1,0 +1,19 @@
+<h1>Listing employees</h1>
+<%= link_to "Home", root_path %>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>hours</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%= employee.first_name %> <%= employee.last_name %></td>
+    <td><%= employee.hours %></td>
+  </tr>
+<% end %>
+</table>

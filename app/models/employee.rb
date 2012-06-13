@@ -41,4 +41,20 @@ class Employee < ActiveRecord::Base
                              uniqueness: { case_sensitive: false }
   validates :password,       presence: true, length: { minimum: 8 }
   validates :address,        presence: true
+
+  def is_waiter?
+    self.employable.is_a?(Waiter)
+  end
+
+  def is_chef?
+    self.employable.is_a?(Chef)
+  end
+
+  def is_manager?
+    self.employable.is_a?(Manager)
+  end
+
+  def hours
+    self.attendances.sum{|p| p.hours}
+  end
 end

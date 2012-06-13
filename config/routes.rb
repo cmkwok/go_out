@@ -7,11 +7,14 @@ GoOut::Application.routes.draw do
   match '/customer_signout', to: 'customer_sessions#destroy'
   match '/customer_home', to: 'customer_home#index'
   match '/employee_signin', to: 'employee_sessions#new'
+  match '/employee_home', to: 'employee_home#index'
   match '/menu', to: 'menu#index'
   match '/table_menu', to: 'table_menu#index'
 
   resources :customer_sessions
   resources :employee_sessions
+  resources :employee_hours
+  resources :waiter_orders
 
   resources :tables
   resources :catalogs

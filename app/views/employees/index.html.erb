@@ -1,4 +1,6 @@
 <h1>Listing employees</h1>
+<%= link_to "Home", root_path %>
+ | <%= link_to 'New Employee', new_employee_path %>
 
 <%= form_for :search, url: employees_path, method: :get do |f| %>
   <%= f.label :state %>
@@ -33,7 +35,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Employee', new_employee_path %>

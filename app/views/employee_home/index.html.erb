@@ -1,0 +1,11 @@
+<h1>Employee Home</h1>
+
+<% if @employee.is_manager? %>
+  <%= link_to "Home", root_path %>
+  | <%= link_to "Employees", employees_path %>
+  | <%= link_to "Waiters", waiters_path %>
+  | <%= link_to "Chefs", chefs_path %>
+  | <%= link_to "Managers", managers_path %>
+  | <%= link_to "Employee Hours", employee_hours_path %>
+  | <%= link_to "Waiter Orders", waiter_orders_path %>
+<% end %>

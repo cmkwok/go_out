@@ -1,0 +1,16 @@
+<h1>Waiter Orders</h1>
+<%= link_to "Home", root_path %>
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>orders</th>
+  </tr>
+
+<% @waiters.each do |waiter| %>
+  <tr>
+    <td><%= waiter.employee.first_name %> <%= waiter.employee.last_name %></td>
+    <td><%= waiter.orders.count %></td>
+  </tr>
+<% end %>
+</table>

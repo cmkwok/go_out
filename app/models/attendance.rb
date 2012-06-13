@@ -11,8 +11,14 @@
 #
 
 class Attendance < ActiveRecord::Base
+  attr_accessible :employee_id, :check_in, :check_out
+
   belongs_to :employee
 
   validates :check_in,    presence: true
   validates :employee_id, presence: true
+
+  def hours
+    (self.check_out - self.check_in) / 3600
+  end
 end
