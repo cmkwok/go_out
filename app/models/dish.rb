@@ -13,7 +13,7 @@
 #
 
 class Dish < ActiveRecord::Base
-  attr_accessible :name, :introduction, :price, :availability
+  attr_accessible :name, :introduction, :price, :availability, :catalog_id
   has_many :order_items
   belongs_to :catalog
 

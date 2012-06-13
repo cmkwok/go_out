@@ -12,6 +12,9 @@
 <%= label_tag :availability %>
 <%= @dish.availability %>
 </br>
+<%= label_tag :catalog %>
+<%= @dish.catalog.present? ? @dish.catalog.description : "none" %>
+</br>
 
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %>

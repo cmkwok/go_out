@@ -24,6 +24,8 @@
     <%= f.label :availability %>
     <%= f.check_box :availability %>
     </br>
+    <%= f.label :catalog %>
+    <%= f.select :catalog_id, @catalogs.collect{|p| [p.description, p.id]} %>
   </div>
 
   <div class="actions">

@@ -26,6 +26,7 @@ class DishesController < ApplicationController
   # GET /dishes/new.json
   def new
     @dish = Dish.new
+    @catalogs = Catalog.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class DishesController < ApplicationController
   # GET /dishes/1/edit
   def edit
     @dish = Dish.find(params[:id])
+    @catalogs = Catalog.all
   end
 
   # POST /dishes

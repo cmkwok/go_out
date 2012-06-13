@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= label_tag :description %>
+<%= @catalog.description %>
+</br>
 
 <%= link_to 'Edit', edit_catalog_path(@catalog) %> |
 <%= link_to 'Back', catalogs_path %>

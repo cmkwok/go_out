@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +10,7 @@
 
 <% @catalogs.each do |catalog| %>
   <tr>
+    <td><%= catalog.description %></td>
     <td><%= link_to 'Show', catalog %></td>
     <td><%= link_to 'Edit', edit_catalog_path(catalog) %></td>
     <td><%= link_to 'Destroy', catalog, confirm: 'Are you sure?', method: :delete %></td>

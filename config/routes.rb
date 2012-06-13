@@ -1,34 +1,30 @@
 GoOut::Application.routes.draw do
+  root to: 'home#index'
+  match '/customer_signup', to: 'customers#new'
+  match '/customer_signin', to: 'customer_sessions#new'
+  match '/customer_signout', to: 'customer_sessions#destroy'
+  match '/customer_home', to: 'customer_home#index'
+  match '/employee_signin', to: 'employee_sessions#new'
+  match '/menu', to: 'menu#index'
+
+  resources :customer_sessions
+  resources :employee_sessions
+
   resources :tables
-
   resources :catalogs
-
   resources :dishes
-
   resources :order_item_statuses
-
   resources :order_items
-
   resources :order_statuses
-
   resources :orders
-
   resources :salary_rates
-
   resources :payroll_logs
-
   resources :attendances
-
   resources :addresses
-
   resources :customers
-
   resources :managers
-
   resources :chefs
-
   resources :waiters
-
   resources :employees
 
   # The priority is based upon order of creation:
