@@ -1,0 +1,2 @@
+<%= f.select :dish_id, @dishes.collect{|p| [p.name, p.id]} %>
+<%= f.link_to_remove "Remove Dish" %>

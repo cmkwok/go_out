@@ -18,10 +18,7 @@
     <%= f.label :table %>
     <%= f.select :table_id, @tables.collect{|p| ["#{p.description} #{p.max_capacity} people", p.id]} %>
     </br>
-    <%= f.fields_for :order_items do |g| %>
-      <%= g.select :dish_id, @dishes.collect{|p| [p.name, p.id]} %>
-      <%= g.link_to_remove "Remove Dish" %>
-    <% end %>
+    <%= f.fields_for :order_items %>
     <%= f.link_to_add "Add Dish" %>
   </div>
 
