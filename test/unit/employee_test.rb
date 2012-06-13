@@ -13,8 +13,8 @@
 #  updated_at      :datetime        not null
 #  employable_id   :integer(4)
 #  employable_type :string(255)
-#  address_id      :integer(4)
 #  payroll_log_id  :integer(4)
+#  salary_rate_id  :integer(4)
 #
 
 require 'test_helper'

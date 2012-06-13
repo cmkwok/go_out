@@ -18,9 +18,6 @@ class OrderItem < ActiveRecord::Base
   belongs_to :dish
   belongs_to :order_item_status
 
-  STATUS_OPTIONS = %w(created submitted cooking cooked delivered)
-  validates :comment,              presence: true,
-                                   inclusion: { in: STATUS_OPTIONS }
   validates :order_id,             presence: true
   validates :chef_id,              presence: true
   validates :dish_id,              presence: true

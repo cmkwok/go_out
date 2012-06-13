@@ -13,13 +13,14 @@
 #  updated_at      :datetime        not null
 #  employable_id   :integer(4)
 #  employable_type :string(255)
-#  address_id      :integer(4)
 #  payroll_log_id  :integer(4)
+#  salary_rate_id  :integer(4)
 #
 
 class Employee < ActiveRecord::Base
   belongs_to :employable, polymorphic: true
-  belongs_to :address
+  has_one :address, as: :addressable
+  belongs_to :salary_rate
   has_many :attendances
   has_many :payroll_logs
 
@@ -34,6 +35,7 @@ class Employee < ActiveRecord::Base
                              format: { with: VALID_EMAIL_REGEX },
                              uniqueness: { case_sensitive: false }
   validates :password,       presence: true, length: { minimum: 8 }
-  validates :address_id,     presence: true
+  validates :address,        presence: true
   validates :payroll_log_id, presence: true
+  validates :salary_rate_id, presence: true
 end

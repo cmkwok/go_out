@@ -6,7 +6,6 @@
 #  description :string(255)
 #  created_at  :datetime        not null
 #  updated_at  :datetime        not null
-#  dish_id     :integer(4)
 #
 
 require 'test_helper'

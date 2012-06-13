@@ -13,7 +13,7 @@
 #
 
 class Customer < ActiveRecord::Base
-  belongs_to :address
+  has_one :address, as: :addressable
   has_many :orders
 
   validates :first_name, presence: true
@@ -26,5 +26,5 @@ class Customer < ActiveRecord::Base
                          uniqueness: { case_sensitive: false }
   validates :phone,      presence: true,
                          format: { with: /\d{10}/ }
-  validates :address_id, presence: true
+  validates :address,    presence: true
 end
