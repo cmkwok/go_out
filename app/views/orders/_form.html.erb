@@ -1,4 +1,4 @@
-<%= form_for(@order) do |f| %>
+<%= nested_form_for @order do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -15,11 +15,14 @@
     <%= f.label :number_customer %>
     <%= f.text_field :number_customer %>
     </br>
-    <%= f.label :number_customer %>
-    <%= f.text_field :number_customer %>
-    </br>
     <%= f.label :table %>
     <%= f.select :table_id, @tables.collect{|p| ["#{p.description} #{p.max_capacity} people", p.id]} %>
+    </br>
+    <%= f.fields_for :order_items do |g| %>
+      <%= g.select :dish_id, @dishes.collect{|p| [p.name, p.id]} %>
+      <%= g.link_to_remove "Remove Dish" %>
+    <% end %>
+    <%= f.link_to_add "Add Dish" %>
   </div>
 
 

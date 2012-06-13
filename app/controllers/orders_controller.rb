@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @tables = Table.all
+    @dishes = Dish.all
 
     respond_to do |format|
       format.html # new.html.erb

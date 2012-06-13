@@ -11,6 +11,48 @@
     </div>
   <% end %>
 
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    </br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    </br>
+    <%= f.label :ssn %>
+    <%= f.text_field :ssn %>
+    </br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    </br>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    </br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    </br>
+    <%= f.fields_for :address do |g| %>
+      <%= g.label :street %>
+      <%= g.text_field :street %>
+      </br>
+      <%= g.label :city %>
+      <%= g.text_field :city %>
+      </br>
+      <%= g.label :state %>
+      <%= g.text_field :state %>
+      </br>
+      <%= g.label :zip %>
+      <%= g.text_field :zip %>
+    <% end %>
+    </br>
+    <%= f.fields_for :salary_rate do |g| %>
+      <%= g.label :hourly_rate %>
+      <%= g.text_field :hourly_rate %>
+      </br>
+      <%= g.label :level %>
+      <%= g.text_field :level %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

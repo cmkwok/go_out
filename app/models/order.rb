@@ -19,11 +19,15 @@
 #
 
 class Order < ActiveRecord::Base
+  attr_accessible :date_create, :date_submit, :number_customer, :pre_tax_amount, :tax, :discount, :tips, :customer_id, :waiter_id, :table_id, :order_status_id, :order_items_attributes
+
   belongs_to :customer
   belongs_to :waiter
   belongs_to :table
   belongs_to :order_status
   has_many :order_items
+
+  accepts_nested_attributes_for :order_items
 
   validates :date_create,     presence: true
   validates :number_customer, presence: true,

@@ -14,6 +14,7 @@ class Table < ActiveRecord::Base
   attr_accessible :min_capacity, :max_capacity
 
   has_many :orders
+  has_many :reservations
 
   validates :min_capacity, presence: true,
                            numericality: { greater_than: 0, less_than: :max_capacity }

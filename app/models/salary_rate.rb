@@ -13,7 +13,8 @@
 #
 
 class SalaryRate < ActiveRecord::Base
-  has_many :employees
+  attr_accessible :hourly_rate, :level
+  belongs_to :employee
 
   validates :level,       presence: true
   validates :hourly_rate, presence: true

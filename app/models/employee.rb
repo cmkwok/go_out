@@ -18,11 +18,16 @@
 #
 
 class Employee < ActiveRecord::Base
+  attr_accessible :first_name, :last_name, :ssn, :phone, :email, :password, :address_attributes, :salary_rate_attributes
+
   belongs_to :employable, polymorphic: true
   has_one :address, as: :addressable
-  belongs_to :salary_rate
+  has_one :salary_rate
   has_many :attendances
   has_many :payroll_logs
+
+  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :salary_rate
 
   validates :first_name,     presence: true
   validates :last_name,      presence: true
@@ -36,6 +41,4 @@ class Employee < ActiveRecord::Base
                              uniqueness: { case_sensitive: false }
   validates :password,       presence: true, length: { minimum: 8 }
   validates :address,        presence: true
-  validates :payroll_log_id, presence: true
-  validates :salary_rate_id, presence: true
 end

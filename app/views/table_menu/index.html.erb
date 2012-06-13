@@ -1,7 +1,13 @@
 <h1>Table Menu</h1>
+<%= link_to "Home", root_path %>
 
 <%= form_for :search, url: table_menu_path do |f| %>
-  <%= f.datetime_select :time %>
+  <%= f.label :time %>
+  <%= f.datetime_select :time, default: Time.now %>
+  </br>
+  <%= f.label :party_size %>
+  <%= f.text_field :party_size, default: Time.now %>
+  </br>
   <%= f.submit "Search" %>
 <% end %>
 
@@ -16,10 +22,10 @@
 <% @tables.each do |table| %>
   <tr>
     <td>Table <%= table.id %></td>
-    <td><%= table.max_capacity %></td>
     <td><%= table.min_capacity %></td>
+    <td><%= table.max_capacity %></td>
     <td>
-      <%= form_for :table, url: table_menu_path do |f| %>
+      <%= form_for :reservation, url: table_menu_path do |f| %>
         <%= f.hidden_field :time, value: @time %>
         <%= f.hidden_field :table_id, value: table.id %>
         <%= f.hidden_field :customer_id, value: @customer.id %>

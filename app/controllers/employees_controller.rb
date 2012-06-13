@@ -25,6 +25,8 @@ class EmployeesController < ApplicationController
   # GET /employees/new.json
   def new
     @employee = Employee.new
+    @employee.build_address
+    @employee.build_salary_rate
 
     respond_to do |format|
       format.html # new.html.erb
