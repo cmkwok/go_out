@@ -1,5 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-
+<%= label_tag :id %>
+<%= @customer.id %>
+</br>
+<%= label_tag :name %>
+<%= @customer.first_name %>
+<%= @customer.last_name %>
+</br>
+<%= label_tag :email %>
+<%= @customer.email %>
+</br>
+<%= label_tag :phone %>
+<%= @customer.phone %>
+</br>
+<%= label_tag :address %>
+<%= @customer.address.street %>
+<%= @customer.address.city %>
+<%= @customer.address.state %>
+<%= @customer.address.zip %>
+</br>
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>

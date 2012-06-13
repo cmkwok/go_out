@@ -14,6 +14,8 @@
 #
 
 class Address < ActiveRecord::Base
+  attr_accessible :street, :city, :state, :zip
+
   belongs_to :addressable, polymorphic: true
 
   validates :street, presence: true

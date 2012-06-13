@@ -2,15 +2,14 @@
 #
 # Table name: dishes
 #
-#  id            :integer(4)      not null, primary key
-#  name          :string(255)
-#  introduction  :string(255)
-#  price         :integer(10)
-#  availability  :boolean(1)
-#  created_at    :datetime        not null
-#  updated_at    :datetime        not null
-#  order_item_id :integer(4)
-#  catalog_id    :integer(4)
+#  id           :integer(4)      not null, primary key
+#  name         :string(255)
+#  introduction :string(255)
+#  price        :integer(10)
+#  availability :boolean(1)
+#  created_at   :datetime        not null
+#  updated_at   :datetime        not null
+#  catalog_id   :integer(4)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

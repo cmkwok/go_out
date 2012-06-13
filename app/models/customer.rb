@@ -13,8 +13,12 @@
 #
 
 class Customer < ActiveRecord::Base
+  attr_accessible :first_name, :last_name, :phone, :email, :password, :address_attributes
+
   has_one :address, as: :addressable
   has_many :orders
+
+  accepts_nested_attributes_for :address
 
   validates :first_name, presence: true
   validates :last_name,  presence: true

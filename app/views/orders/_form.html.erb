@@ -11,6 +11,19 @@
     </div>
   <% end %>
 
+  <div>
+    <%= f.label :number_customer %>
+    <%= f.text_field :number_customer %>
+    </br>
+    <%= f.label :number_customer %>
+    <%= f.text_field :number_customer %>
+    </br>
+    <%= f.label :table %>
+    <%= f.select :table_id, @tables.collect{|p| ["#{p.description} #{p.max_capacity} people", p.id]} %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

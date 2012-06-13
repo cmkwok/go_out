@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<%= label_tag :id %>
+<%= @dish.id %>
+</br>
+<%= label_tag :introduction %>
+<%= @dish.introduction %>
+</br>
+<%= label_tag :price %>
+<%= @dish.price %>
+</br>
+<%= label_tag :availability %>
+<%= @dish.availability %>
+</br>
 
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %>

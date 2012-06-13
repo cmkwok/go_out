@@ -3,6 +3,7 @@ class DishesController < ApplicationController
   # GET /dishes.json
   def index
     @dishes = Dish.all
+    @catalogs = Catalog.all
 
     respond_to do |format|
       format.html # index.html.erb

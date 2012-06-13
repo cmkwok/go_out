@@ -9,6 +9,7 @@
 #
 
 class Catalog < ActiveRecord::Base
+  attr_accessible :description
   has_many :dishes
 
   validates :description, presence: true

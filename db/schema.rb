@@ -58,11 +58,10 @@ ActiveRecord::Schema.define(:version => 20120613065314) do
   create_table "dishes", :force => true do |t|
     t.string   "name"
     t.string   "introduction"
-    t.decimal  "price",         :precision => 10, :scale => 0
+    t.decimal  "price",        :precision => 10, :scale => 0
     t.boolean  "availability"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.integer  "order_item_id"
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.integer  "catalog_id"
   end
 

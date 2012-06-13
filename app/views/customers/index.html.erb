@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +10,7 @@
 
 <% @customers.each do |customer| %>
   <tr>
+    <td><%= customer.first_name %> <%= customer.last_name %></td>
     <td><%= link_to 'Show', customer %></td>
     <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
     <td><%= link_to 'Destroy', customer, confirm: 'Are you sure?', method: :delete %></td>
