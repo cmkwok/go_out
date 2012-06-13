@@ -1,0 +1,21 @@
+<h1>Listing payroll_logs</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @payroll_logs.each do |payroll_log| %>
+  <tr>
+    <td><%= link_to 'Show', payroll_log %></td>
+    <td><%= link_to 'Edit', edit_payroll_log_path(payroll_log) %></td>
+    <td><%= link_to 'Destroy', payroll_log, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Payroll log', new_payroll_log_path %>
