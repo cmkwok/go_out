@@ -1,0 +1,32 @@
+<h1>Menu</h1>
+
+<div>
+  <%= link_to "Home", root_path %>
+  | <%= link_to "All", menu_path %>
+  <% @catalogs.each do |catalog| %>
+    | <%= link_to catalog.description, menu_path(:catalog_id => catalog.id) %>
+  <% end %>
+</div>
+
+<%= form_for :search, url: menu_path do |f| %>
+  <%= f.text_field :query %>
+  <%= f.submit "Search" %>
+<% end %>
+
+<table border="1">
+  <tr>
+    <th>name</th>
+    <th>introduction</th>
+    <th>price</th>
+    <th>availability</th>
+  </tr>
+
+<% @dishes.each do |dish| %>
+  <tr>
+    <td><%= dish.name %></td>
+    <td><%= dish.introduction %></td>
+    <td>$<%= dish.price %></td>
+    <td><%= dish.availability %></td>
+  </tr>
+<% end %>
+</table>
